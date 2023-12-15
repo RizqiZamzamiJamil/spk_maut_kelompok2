@@ -14,7 +14,8 @@ if (isset($_POST['simpan'])) {
     $nama_kriteria = $_POST['nama_kriteria'];
     $bobot_kriteria = $_POST['bobot_kriteria'];
 
-    $query = "INSERT INTO kriteria (kode_kriteria, keterangan, bobot) VALUES ('$indeks_kriteria', '$nama_kriteria', '$bobot_kriteria')";
+    $query = "INSERT INTO kriteria (kode_kriteria, keterangan, bobot) 
+            VALUES ('$indeks_kriteria', '$nama_kriteria', '$bobot_kriteria')";
     $result = mysqli_query($koneksi, $query);
 
     if ($result) {
@@ -43,9 +44,6 @@ if (isset($_POST['simpan'])) {
             <br>
         </div>
     </div>
-
-    <!-- Button trigger modal -->
-
 
     <!-- Modal Tambah -->
     <div class="modal fade" id="tambahK" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -82,9 +80,6 @@ if (isset($_POST['simpan'])) {
             </div>
         </div>
     </div>
-
-
-
 
     <!-- Modal Hapus -->
     <div class="modal fade" id="hapusK" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -56,11 +56,11 @@ if (isset($_POST['simpan'])) {
                                 <option>Nama Alternatif</option>
                                 <?php
  
-                                                    $nama = $koneksi->query('SELECT * FROM alternatif ORDER BY nama');
-                                                    while ($datalter = $nama->fetch_array()) {
-                                                        echo "<option value=\"$datalter[id_alternatif]\">$datalter[nama]</option>\n";
-                                                    }
-                                                    ?>
+                                $nama = $koneksi->query('SELECT * FROM alternatif ORDER BY nama');
+                                    while ($datalter = $nama->fetch_array()) {
+                                    echo "<option value=\"$datalter[id_alternatif]\">$datalter[nama]</option>\n";
+                                }
+                                ?>
                             </select>
                         </div>
                         <div class="form-group my-4">

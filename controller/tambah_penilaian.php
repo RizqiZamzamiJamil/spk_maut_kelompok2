@@ -7,7 +7,8 @@ $alternatif = $_POST['alter'];
 $kriteria   = $_POST['krit'];
 $poin       = $_POST['nilai'];
 
-$query = "INSERT INTO penilaian (id_alternatif, id_kriteria, nilai) VALUES ('$alternatif', '$kriteria', '$poin')";
+$query = "INSERT INTO penilaian (id_alternatif, id_kriteria, nilai) 
+        VALUES ('$alternatif', '$kriteria', '$poin')";
 $buat  = $koneksi->query($query);
 
 if ($buat) {

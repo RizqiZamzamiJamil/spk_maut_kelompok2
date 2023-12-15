@@ -1,5 +1,6 @@
 <?php
 include 'koneksi.php';
+
 // Mendapatkan daftar kriteria
 $query_kriteria = "SELECT * FROM kriteria";
 $result_kriteria = mysqli_query($koneksi, $query_kriteria);
@@ -28,7 +29,7 @@ if (!$result_penilaian) {
 $min_values = array_fill(0, count($kriteria), PHP_FLOAT_MAX);
 $max_values = array_fill(0, count($kriteria), PHP_FLOAT_MIN);
 
-$matrix_keputusan = array(); // Tambahkan inisialisasi untuk $matrix_keputusan
+$matrix_keputusan = array();
 
 while ($row_penilaian = mysqli_fetch_assoc($result_penilaian)) {
     $nilai = (float)$row_penilaian['nilai'];
@@ -51,6 +52,7 @@ foreach ($matrix_keputusan as $alternatif => $kriteriaValues) {
     $matrix_normalisasi[$alternatif] = array();
     foreach ($kriteriaValues as $kriteriaName => $nilai) {
         $index_kriteria = array_search($kriteriaName, array_column($kriteria, 'keterangan'));
+        
         // Rumus Normalisasi
         $normalized_value = ($nilai - $min_values[$index_kriteria]) / ($max_values[$index_kriteria] - $min_values[$index_kriteria]);
         $matrix_normalisasi[$alternatif][$kriteriaName] = $normalized_value;

@@ -129,15 +129,15 @@ mysqli_close($koneksi);
                         <?php foreach ($kriteria as $kriteriaItem): ?>
                         <th scope="col"><?php echo $kriteriaItem['keterangan']; ?></th>
                         <?php endforeach; ?>
-                        <th scope="col">Nilai Preferensi</th> <!-- Tambahkan kolom Nilai Preferensi -->
+                        <th scope="col">Nilai Preferensi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-            $nomor = 1;
-            foreach ($matrix_perkalian as $alternatif => $kriteriaValues):
-                $total_nilai_preferensi = array_sum($kriteriaValues); // Hitung total nilai preferensi
-            ?>
+                        $nomor = 1;
+                        foreach ($matrix_perkalian as $alternatif => $kriteriaValues):
+                        $total_nilai_preferensi = array_sum($kriteriaValues);
+                    ?>
                     <tr>
                         <th scope="row"><?php echo $nomor++; ?></th>
                         <td><?php echo $alternatif; ?></td>
@@ -145,7 +145,6 @@ mysqli_close($koneksi);
                         <td><?php echo number_format($perkalianValue, 3, '.', ''); ?></td>
                         <?php endforeach; ?>
                         <td><?php echo number_format($total_nilai_preferensi, 3, '.', ''); ?></td>
-                        <!-- Tampilkan total nilai preferensi -->
                     </tr>
                     <?php endforeach; ?>
                 </tbody>

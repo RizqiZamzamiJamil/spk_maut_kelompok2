@@ -13,7 +13,8 @@ if (isset($_POST['simpan'])) {
     $indeks_alternatif = $_POST['indeks_alternatif'];
     $nama = $_POST['nama'];
 
-    $query = "INSERT INTO alternatif (indeks_alternatif, nama) VALUES ('$indeks_alternatif', '$nama')";
+    $query = "INSERT INTO alternatif (indeks_alternatif, nama) 
+            VALUES ('$indeks_alternatif', '$nama')";
     $result = mysqli_query($koneksi, $query);
 
     if ($result) {
@@ -41,9 +42,6 @@ if (isset($_POST['simpan'])) {
             <br>
         </div>
     </div>
-
-    <!-- Button trigger modal -->
-
 
     <!-- Modal Tambah -->
     <div class="modal fade" id="tambahK" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

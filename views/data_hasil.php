@@ -3,7 +3,6 @@ include 'template/header.php';
 include '../controller/koneksi.php';
 include '../controller/perhitungan.php';
 
-
 $ranking_data = array();
 foreach ($matrix_perkalian as $alternatif => $kriteriaValues) {
     $total_nilai_preferensi = array_sum($kriteriaValues);
@@ -22,8 +21,6 @@ $ranking = 1;
 foreach ($ranking_data as &$data) {
     $data['ranking'] = $ranking++;
 }
-
-
 
 mysqli_close($koneksi);
 ?>
@@ -71,7 +68,6 @@ mysqli_close($koneksi);
                 </tbody>
             </table>
         </div>
-        <!-- Remaining content ... -->
 
     </div>
 
